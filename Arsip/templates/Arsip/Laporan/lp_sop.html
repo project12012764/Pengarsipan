@@ -1,0 +1,38 @@
+<div style="width: 100%; background-color: #cdcdcd" align="center">
+            <div style="width: 900px; background-color: #FFF">
+            <h3 align="center">LAPORAN DATA SOP</h3><hr>
+                <table border="1" width="100%">
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>NAMA ARSIP</th>
+                            <th>DOKUMEN</th>
+                            <th>Kategori</th>
+                            <th>BULAN</th>
+                            <th>TANGGAL</th>
+                            <th>TANGGAL SAH</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for Sop in data %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{Sop.nama_arsip}}</td>
+                            <td>{{Sop.dokumen}}</td>
+                            <td>{{Sop.kategori}}</td>
+                            <td>{{Sop.bulan}}</td>
+                            <td>{{Sop.tanggal}}</td>
+                            <td>{{Sop.tanggal_sah}}</td>
+                            <!-- <td>{{jenissurat.keterangan_jenis}}</td> -->
+                        </tr>
+                        
+                        {% endfor %}
+                        
+                        
+                        
+                    </tbody>
+                </table>
+</div>
+</div>
+<script type="text/javascript">print();</script>

@@ -1,0 +1,68 @@
+{%load static%}
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <img class="img-profile rounded-circle" src="{%static 'logo.png'%}" style="width: 50px">
+                </div>
+
+                <div class="sidebar-brand-text mx-3">APLIKASI ARSIP <sup></sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'beranda'%}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Beranda</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item active">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-table"></i>
+                    <span>Jenis Dokumen</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{% url 'lpm'%}">LPM</a>
+                        <a class="collapse-item" href="{% url 'sop'%}">SOP</a>
+                        <a class="collapse-item" href="{% url 'surat_keputusan'%}">Surat Keputusan</a>
+                        <a class="collapse-item" href="{% url 'pedoman'%}">Pedoman</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'petugas' %}">
+                    <i class="fas fa-user"></i>
+                    <span>Settings</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'Menu_LP' %}">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>UNUJA</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+
+        </ul>
+    </div>
+</body>

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static%}
+{% block content %}
+
+<div class="container-fluid">
+
+
+    <!-- Content Row -->
+
+<h4>HALAMAN MENU LAPORAN</h4>
+    <div class="row">
+
+        <div class="col-lg-3 mb-4">
+            <div class="card bg-primary text-white shadow">
+                <div class="ibox-body" align="center">
+                    <div class="m-b-5">Laporan LPM </div>
+                    <a href="{% url 'LP_PM' %}" target="_blak" class="btn btn-info">
+                    <h1><span class="count">Cetak Data</span></h1>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-lg-3 mb-4">
+            <div class="card bg-success text-white shadow">
+                <div class="ibox-body" align="center">
+                    <div class="m-b-5">Laporan SOP </div>
+                    <a href="{% url 'LP_SOP' %}" target="_blak" class="btn btn-info">
+                    <h1><span class="count">Cetak Data</span></h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-4">
+            <div class="card bg-info text-white shadow">
+                <div class="ibox-body" align="center">
+                    <div class="m-b-5">Laporan SURAT KEPUTUSAN </div>
+                    <a href="{% url 'LP_SK' %}" target="_blak" class="btn btn-info">
+                    <h1><span class="count">Cetak Data</span></h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-4">
+            <div class="card bg-warning text-white shadow">
+                <div class="ibox-body" align="center">
+                    <div class="m-b-5">Laporan PEDOMAN </div>
+                    <a href="{% url 'LP_PD' %}" target="_blak" class="btn btn-info">
+                    <h1><span class="count">Cetak Data</span></h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}

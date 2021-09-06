@@ -1,0 +1,35 @@
+<div style="width: 100%; background-color: #cdcdcd" align="center">
+            <div style="width: 900px; background-color: #FFF">
+            <h3 align="center">LAPORAN DATA PEDOMAN</h3><hr>
+                <table border="1" width="100%">                    
+
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>NAMA ARSIP</th>
+                            <th>DOKUMEN</th>    
+                            <TH>KATEGORI</TH>
+                            <th>BULAN</th>
+                            <th>TANGGAL</th>
+                            
+                            <TH>TANGGAL SAH</TH>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for Pedoman in data %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{Pedoman.nama_arsip}}</td>
+                            <td>{{Pedoman.dokumen}}</td>
+                            <td>{{Pedoman.kategori}}</td>
+                            <td>{{Pedoman.bulan}}</td>
+                            <td>{{Pedoman.tanggal}}</td>
+                            <td>{{Pedoman.tanggal_sah}}</td>
+                        </tr>
+
+                        {% endfor %}
+                        
+                    </tbody>
+                </table>
+            </div></div>
+            <script type="text/javascript">print();</script>

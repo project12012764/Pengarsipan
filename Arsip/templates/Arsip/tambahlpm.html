@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <!-- <h1 class="h3 mb-2 text-gray-800">DOKUMEN</h1>
+    <p class="mb-4"><a target="_blank"
+            href="https://datatables.net"></a>.</p> -->
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Document</h6>
+        </div>
+        <br>
+        
+        
+        <div class="card-body">
+                <form class="{% url 'tambahlpm'%}" method="POST" novalidate="novalidate" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                    <table class="table">
+                    <tr>
+                    <td>
+                            {{formdata}}
+                    </td></tr></table>
+                        </div><br
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <button class="btn btn-primary" type="submit"> Simpan</button>
+                            <a class="btn btn-danger" href="{% url 'lpm'%}"> batal</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <div>
+</div>
+
+
+
+{% endblock content %}

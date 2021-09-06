@@ -1,0 +1,78 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <!-- <h1 class="h3 mb-2 text-gray-800">DOKUMEN</h1>
+    <p class="mb-4"><a target="_blank"
+            href="https://datatables.net"></a>.</p> -->
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">data dokumen Petugas</h6>
+        </div>
+        <br>
+        <p>
+            <a href="{% url 't_petugas'%}" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-10">
+                    <i class="fa fa-plus"></i>
+                </span>
+                <span class="text">Tambah Data</span>
+            </a>
+
+        </p>
+        
+        
+        <div class="card-body">
+            <div class="table-responsive">
+                <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped" style="width: 1200px">
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>Username</th>
+                                                      
+                            <th>OPSI</th>
+                        </tr>
+                    </thead>
+                    
+                        {% for Sop in data %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{Sop.username}}</td>
+                            
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{% url 'edit_petugas' Sop.id %}" class="btn btn-primary ">
+                                        <span class="icon text-white-10">
+                                        </span>
+                                        <span class="text">EDIT</span>
+                                    </a> |
+                                    <a href="{% url 'hapus_petugas' Sop.id %}" class="btn btn-danger ">
+                                        <span class="icon text-white-10">
+                                        </span>
+                                        <span class="text">HAPUS</span>
+                                    </a>    
+                                </div>
+                            </td>
+                            <!-- <td>{{jenissurat.keterangan_jenis}}</td> -->
+                        </tr>
+
+
+                        {% endfor %}
+                        
+                        
+                        
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+{% endblock content %}

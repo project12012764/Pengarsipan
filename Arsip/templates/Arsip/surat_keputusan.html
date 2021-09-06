@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <!-- <h1 class="h3 mb-2 text-gray-800">DOKUMEN</h1>
+    <p class="mb-4"><a target="_blank"
+            href="https://datatables.net"></a>.</p> -->
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">data dokumen Surat Keputusan</h6>
+        </div>
+        <br>
+        <p>
+            <a href="{% url 'tambahsurat_keputusan'%}" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-10">
+                    <i class="fa fa-plus"></i>
+                </span>
+                <span class="text">Tambah Dokumen</span>
+            </a>
+
+        </p>
+        
+        
+        <div class="card-body">
+            <div class="table-responsive">
+                <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>NAMA ARSIP</th>
+                            <th>DOKUMEN</th>
+                            <th>Kategori</th>
+                            <th>BULAN</th>
+                            <th>TANGGAL</th>
+                            <th>TANGGAL SAH</th>
+                            <th>OPSI</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for Sk in tampilsurat_keputusan %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{Sk.nama_arsip}}</td>
+                            <td><a href="/documents/{{Sk.dokumen}}" target="_blank">{{Sk.dokumen}}</a></td>
+                            <td>{{Sk.kategori}}</td>
+                            <td>{{Sk.bulan}}</td>
+                            <td>{{Sk.tanggal}}</td>
+                            <td>{{Sk.tanggal_sah}}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{% url 'editsurat_keputusan' Sk.id %}" class="btn btn-primary ">
+                                        <span class="icon text-white-10">
+                                        </span>
+                                        <span class="text">EDIT</span>
+                                    </a> |
+                                    <a href="{% url 'hapussurat_keputusan' Sk.id %}" class="btn btn-danger ">
+                                        <span class="icon text-white-10">
+                                        </span>
+                                        <span class="text">HAPUS</span>
+                                    </a> |
+                                    <form method="get" action="{% url 'lp_sk' %}" target="_blank"> 
+                                    <input type="hidden" name="chek" value="{{Sk.id}}">
+                                    <button class="btn btn-success" type="submit">
+                                        <span class="icon text-white-10">
+                                        </span>
+                                        <span class="text">View</span>
+                                    </button>
+                                    </form>
+                                </div>
+                            </td>
+                            <!-- <td>{{jenissurat.keterangan_jenis}}</td> -->
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="17" align="center"> Data Masih Kosong</td>
+                        </tr>
+
+
+                        {% endfor %}
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

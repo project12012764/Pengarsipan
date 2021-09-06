@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static%}
+{% block content %}
+
+<div class="container-fluid">
+
+
+    <!-- Content Row -->
+
+
+    <div class="row">
+        <div class="col-lg-3 mb-4">
+            <div class="card bg-primary text-white shadow">
+                <div class="ibox-body" align="center">
+                    <div class="m-b-5"> LPM </div><h1><span class="count">{{jumlah_lpm}}</span></h1>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-lg-3 mb-4">
+            <div class="card bg-success text-white shadow">
+                <div class="ibox-body" align="center">
+                    <div class="m-b-5"> SOP </div><h1><span class="count">{{jumlah_sop}}</span></h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-4">
+            <div class="card bg-info text-white shadow">
+                <div class="ibox-body" align="center">
+                    <div class="m-b-5"> SURAT KEPUTUSAN </div><h1><span class="count">{{jumlah_sk}}</span></h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-4">
+            <div class="card bg-warning text-white shadow">
+                <div class="ibox-body" align="center">
+                    <div class="m-b-5">PEDOMAN </div><h1><span class="count">{{jumlah_PD}}</span></h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}
